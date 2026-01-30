@@ -1,8 +1,40 @@
-with open('tests/input.txt', 'r') as f:
-    lines = [line.strip() for line in f.readlines() if line.strip()]
+import sys
+
+if len(sys.argv) < 2:
+    print("Type the following to use: python3 src/taskA.py tests/inputFile.")
+    exit(1)
+
+inputFile = sys.argv[1]
+
+try:
+    with open(inputFile, 'r') as f:
+        lines = [line.strip() for line in f.readlines() if line.strip()]
+
+except FileNotFoundError:
+    print("File not found.")
+    exit(1)
+
+if not lines:
+    print("Empty input file")
+    exit(1)
 
 # n = number of hospitals/students
 n = int(lines[0])
+
+# Checks if n is a positive integer
+if n <= 0:
+    print("n must be a positive integer.")
+    exit(1)
+
+# Checks if number of lines are right
+if len(lines) < (2 * n ) + 1:
+    print("Incomplete input file.")
+    exit(1)
+
+# Checks edge case for one hospital and one student
+if len(lines) == 3:
+    print("1 1")
+    exit(0)
 
 # Preference lists for hospitals and students
 hospitalPreferences = []
