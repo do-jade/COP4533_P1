@@ -7,8 +7,8 @@ Charan Sriram (UFID: 73870076)
 Project Structure
 
 How to Run
-All commands are assumed to be running from the COP4533_P1 Directory. You should see the README file, and src, data, and tests folders in this directory.
-We also ran on both linux and windows terminals so adjust python command syntax as necessary for your grading environment.
+- All commands are assumed to be running from the COP4533_P1 Directory. You should see the README file, and src, data, and tests folders in this directory. We also ran on both linux and windows terminals so adjust python command syntax as necessary for your grading environment.
+- (*Note: the input and output files should match each other in the same format as example.in and example.out do in the project spec, they dont have to be valid but that is how to manually check*)
 
 Task A:
 1. Add a file to tests folder for input
@@ -27,13 +27,12 @@ There are two options for running Task B.
     - python src/taskB.py tests/inputFilename tests/outputFilename
 2. If you are running just Task B without Task A, then you have to manually edit the input and output files you want to use first and then run:
     - python src/taskB.py tests/inputFilename tests/outputFilename
-    - (*Note: the input and output files should match each other in the same format as example.in and example.out do in the project spec, they dont have to be valid but that is how to manually check*)
 
 Example following the same structure as before:
 - python src/taskA.py tests/input.txt > tests/output.txt
 - python src/taskB.py tests/input.txt tests/output.txt
 
-This will print VALID STABLE or INVALID (message)
+This will print VALID STABLE, UNSTABLE( with the unstable pair ), or INVALID ( message )
 
 Task C:
 ![Task C Graph](data/task_C_graph.png)
