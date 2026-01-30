@@ -1,5 +1,4 @@
-# NOT FINISHED OR RUNNABLE
-# FILE IS JUST PSEUDOCODE FOR THE PURPOSE OF ENSURING LOGIC WORKS BEFORE IMPLEMENTING
+import sys
 
 # Helper Functions
 # Parses A Line Into Ints
@@ -59,10 +58,14 @@ def blockingPairCheck(n, hospitalToStudent, studentToHospital, hospitalPreferenc
 
 # Main
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+            print("INVALID (Incorrect Number Of User Inputs")
+            raise SystemExit(0)
+    
     # Will Go Invalid As Soon As Something Fails
     try:
-        # Read Preference File
-        with open("tests/input.txt", "r") as f:
+        # Read In Files
+        with open(sys.argv[1], "r") as f:
             preferences = [line.strip() for line in f if line.strip()]
 
         # Check For Empty File Edge Case
@@ -116,10 +119,10 @@ if __name__ == "__main__":
         # https://stackoverflow.com/questions/4655250/difference-between-utf-8-and-utf-16
         # FOR SOME REASON THIS HAS TO ACCOUNT FOR BOTH FILE VERSIONS DO NOT REMOVE THE UTF 16 PART PLEASE
         try:
-            with open("tests/matching.txt", "r", encoding="utf-8") as f:
+            with open(sys.argv[2], "r", encoding="utf-8") as f:
                 matches = [line.strip() for line in f if line.strip()]
         except UnicodeDecodeError:
-            with open("tests/matching.txt", "r", encoding="utf-16") as f:
+            with open(sys.argv[2], "r", encoding="utf-16") as f:
                 matches = [line.strip() for line in f if line.strip()]
 
         #print("DEBUG n =", n)

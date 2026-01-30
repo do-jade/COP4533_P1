@@ -2,7 +2,7 @@ COP4533 Programming Assignment 1
 
 Team Members:
 Dohyun Lee (UFID: 92659157)
-Charan Sriram(UFID: )
+Charan Sriram(UFID: 73870076)
 
 Project Structure
 
@@ -16,3 +16,17 @@ Example using preexisting input file:
 python3 src/taskA.py tests/input.txt
 
 This should output the answer.
+
+Task B:
+There are two options for running Task B.
+1. You can pipe the output for task A into tests/outputFilename as shown below:
+    - python src/taskA.py tests/inputFilename > tests/outputFilename
+    - python src/taskB.py tests/inputFilename tests/outputFilename
+2. If you are running just Task B without Task A, then you have to manually edit the input and output files first and then run:
+    - python src/taskB.py tests/inputFilename tests/outputFilename
+
+Example following the same structure as before:
+python src/taskA.py tests/input.txt > tests/output.txt
+python src/taskB.py tests/input.txt tests/output.txt
+
+This will print VALID STABLE or INVALID (message)
